@@ -86,8 +86,11 @@
 					</div>
 					<div class="form-group">
 						<label>Post Subtitle</label>
-						<input type="text" name="post_subtitle" class="required form-control"
-							   placeholder="Enter Post Subtitle">
+						<input type="text" name="post_subtitle" class="required form-control" placeholder="Enter Post Subtitle">
+					</div>
+					<div class="form-group">
+						<label>Post Content</label>
+						<textarea rows="5" name="post_content" class="required form-control" placeholder="Enter Post Content"></textarea>
 					</div>
 					<div class="form-group">
 						<label>Post Image</label>
@@ -141,8 +144,11 @@
 					</div>
 					<div class="form-group">
 						<label>Post Subtitle</label>
-						<input type="text" name="post_subtitle" class="required form-control"
-							   placeholder="Enter Post Subtitle">
+						<input type="text" name="post_subtitle" class="required form-control" placeholder="Enter Post Subtitle">
+					</div>
+					<div class="form-group">
+						<label>Post Content</label>
+						<textarea rows="5" name="post_content" class="required form-control" placeholder="Enter Post Content"></textarea>
 					</div>
 					<div class="form-group">
 						<label>Post Image</label>
