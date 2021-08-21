@@ -413,7 +413,7 @@ class Admin_Controller extends ST_Controller
 		$this->data['page'] = $controller;
 		$this->data['page_title'] = 'Json Simulator | ' . ucfirst($controller);
 		$this->data['controller'] .= $controller;
-		$this->data['entity_id_post_name'] = $controller . '_id';
+		$this->data['entity_id_field_name'] = $controller . '_id';
 
 		// Ajax URL data
 		$this->data['data_source'] = $this->refer('source/0');

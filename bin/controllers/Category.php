@@ -44,7 +44,7 @@ class Category extends Admin_Controller
 	function update()
 	{
 
-		$old_category = $this->model->get_single_category($_POST[$this->data['entity_id_post_name']]);
+		$old_category = $this->model->get_single_category($_POST[$this->data['entity_id_field_name']]);
 
 		if(!$old_category) {
 			exit('Invalid ID');

@@ -89,7 +89,11 @@ class CI_Model
 		$this->db->select($select);
 		$this->_build_dt_query($postData, $columns, true);
 		$instance->$builder($params);
-		$result = $this->to_datatable_json_format($this->db->get($table)->result(), $datetime_formatter);
+		$query_result = $this->db->get($table);
+		if($this->db->error()['code'] != 0) {
+			$this->printer($this->db->error()['message'], true);
+		}
+		$result = $this->to_datatable_json_format($query_result->result(), $datetime_formatter);
 
 		// Counting Total Items
 		$instance->$builder($params);

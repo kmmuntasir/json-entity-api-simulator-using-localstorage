@@ -46,7 +46,7 @@ class Subcategory extends Admin_Controller
 	function update()
 	{
 
-		$old_subcategory = $this->model->get_single_subcategory($_POST[$this->data['entity_id_post_name']]);
+		$old_subcategory = $this->model->get_single_subcategory($_POST[$this->data['entity_id_field_name']]);
 
 		if(!$old_subcategory) {
 			exit('Invalid ID');

@@ -6,7 +6,7 @@
 // var fetch_action = '';
 // var delete_action = '';
 // var restore_action = '';
-// var entity_id_post_name = '';
+// var entity_id_field_name = '';
 
 
 $(document).ready(function () {
@@ -458,7 +458,7 @@ $(document).on('click', '.edit', function () {
 	show_loader();
 	var id = $(this).attr('entity_id');
 	var datastring = {};
-	datastring[entity_id_post_name] = id;
+	datastring[entity_id_field_name] = id;
 	$('#edit_form')[0].reset();
 
 	$('.custom-file-label').html('Upload Image');
@@ -466,11 +466,11 @@ $(document).on('click', '.edit', function () {
 
 	// alert(id);
 
-	// var entity_id_post_input = "<input type='hidden' id='"+entity_id_post_name+"_input' name='" + entity_id_post_name + "' value='" + id + "'>";
+	// var entity_id_post_input = "<input type='hidden' id='"+entity_id_field_name+"_input' name='" + entity_id_field_name + "' value='" + id + "'>";
 
 	// // alert(entity_id_post_input);
 
-	// $('#' + entity_id_post_name + "_input").remove();
+	// $('#' + entity_id_field_name + "_input").remove();
 	// $('#edit_form').append(entity_id_post_input);
 
 	$.post(fetch_action, datastring, function (data) {
@@ -575,7 +575,7 @@ $(document).on('click', '.delete', function () {
 function delete_final(id) {
 	show_loader();
 	var datastring = {};
-	datastring[entity_id_post_name] = id;
+	datastring[entity_id_field_name] = id;
 	$.post(delete_action, datastring, function (data) {
 		hide_loader();
 		if (data == 'success') {
@@ -597,7 +597,7 @@ $(document).on('click', '.restore', function () {
 function restore_final(id) {
 	show_loader();
 	var datastring = {};
-	datastring[entity_id_post_name] = id;
+	datastring[entity_id_field_name] = id;
 	$.post(restore_action, datastring, function (data) {
 		hide_loader();
 		if (data == 'success') {

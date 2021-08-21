@@ -11,7 +11,7 @@
 	<input type="hidden" id="fetch_action" value="<?php echo $fetch_action; ?>">
 	<input type="hidden" id="delete_action" value="<?php echo $delete_action; ?>">
 	<input type="hidden" id="restore_action" value="<?php echo $restore_action; ?>">
-	<input type="hidden" id="entity_id_post_name" value="<?php echo $entity_id_post_name; ?>">
+	<input type="hidden" id="entity_id_field_name" value="<?php echo $entity_id_field_name; ?>">
 </div>
 
 <?php require_once('elements/nav.php'); ?>

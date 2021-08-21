@@ -114,7 +114,7 @@
 						<label>Category Name</label>
 						<input type="text" name="category_name" class="required form-control"
 							   placeholder="Enter Category Name">
-						<input type="hidden" name="<?php echo $entity_id_post_name; ?>">
+						<input type="hidden" name="<?php echo $entity_id_field_name; ?>">
 					</div>
 					<div class="form-group">
 						<label>Category Icon</label>

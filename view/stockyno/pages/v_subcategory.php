@@ -132,7 +132,7 @@
 						<label>Subcategory Name</label>
 						<input type="text" name="subcategory_name" class="required form-control"
 							   placeholder="Enter Subcategory Name">
-						<input type="hidden" name="<?php echo $entity_id_post_name; ?>">
+						<input type="hidden" name="<?php echo $entity_id_field_name; ?>">
 					</div>
 					<div class="form-group">
 						<label>Subcategory Icon</label>
