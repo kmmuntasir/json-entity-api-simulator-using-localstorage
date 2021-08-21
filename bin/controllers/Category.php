@@ -12,9 +12,7 @@ class Category extends Admin_Controller
 
 	public function index()
 	{
-		$data = $this->data;
-		//Loading View
-		$this->view('main', $data);
+		$this->view('main', $this->data);
 	}
 
 	function source($is_deleted = 0)
