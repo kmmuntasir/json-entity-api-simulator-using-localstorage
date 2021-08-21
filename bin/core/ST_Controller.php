@@ -46,7 +46,7 @@ class ST_Controller extends CI_Controller
 
 		if ($rename) {
 			// Generating a unique name using current microtime
-			$file_name = substr(md5(microtime(true) . $_FILES[$field]['name']), 1, 6);
+			$file_name = substr(md5(microtime(true) . $_FILES[$field]['name']), 1, 12);
 			// Extracting the filename extension from the original filename
 			$ext = pathinfo($_FILES[$field]['name'], PATHINFO_EXTENSION);
 			$file_name .= '.' . $ext;

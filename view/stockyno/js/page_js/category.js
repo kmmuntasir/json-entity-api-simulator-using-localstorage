@@ -27,8 +27,8 @@ function post_process_datatable() {
 }
 
 
-function edit_form_post_process(item_category) {
-	$('#edit_modal .modal-title span').html(item_category.item_category_name);
+function edit_form_post_process(category) {
+	$('#edit_modal .modal-title span').html(category.category_name);
 	// $('#edit_modal .datepicker').val(formatDate($('#edit_modal .datepicker').val(), 'MMMM d, yyyy'));
 }
 
