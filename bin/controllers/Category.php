@@ -28,9 +28,10 @@ class Category extends Admin_Controller
 
 	function add()
 	{
-		$upload_result = $this->__upload_file('category_icon');
+		$upload_file_field_name = 'category_icon';
+		$upload_result = $this->__upload_file($upload_file_field_name);
 		if($upload_result->status) {
-			$_POST['category_icon'] = $upload_result->file_name;
+			$_POST[$upload_file_field_name] = $upload_result->file_name;
 		} else {
 			exit($upload_result->error);
 		}
@@ -42,9 +43,39 @@ class Category extends Admin_Controller
 
 	function update()
 	{
+
+		$old_category = $this->model->get_single_category($_POST[$this->data['entity_id_post_name']]);
+
+		if(!$old_category) {
+			exit('Invalid ID');
+		}
+
+		$upload_file_field_name = 'category_icon';
+
+		$upload_result = null;
+
+		if($_FILES[$upload_file_field_name]['error'] == 0) {
+			$upload_result = $this->__upload_file($upload_file_field_name);
+			if($upload_result->status) {
+				$_POST[$upload_file_field_name] = $upload_result->file_name;
+			} else {
+				exit($upload_result->error);
+			}
+		}
+
 		$_POST['timestamp'] = $this->now();
 		$stat = $this->model->update_single_category($_POST['category_id'], $_POST);
-		echo ($stat) ? 'success' : 'Failed';
+		if($stat) {
+			if($upload_result) {
+				unlink($this->image_upload_path . $old_category->$upload_file_field_name);
+			}
+			echo 'success';
+		} else {
+			if($upload_result) {
+				unlink($this->image_upload_path . $upload_result->file_name);
+			}
+			echo 'Failed';
+		}
 	}
 
 	function delete()

@@ -639,7 +639,7 @@ $('.select2_ajax').each(function () {
 
 
 $('.custom-file-input').change(function() {
-	var fileToBeUploaded = $('.custom-file-input')[0].files[0];
+	var fileToBeUploaded = $(this)[0].files[0];
 	var fileName = fileToBeUploaded.name;
 	$(this).siblings('.custom-file-label').html(fileName);
 
