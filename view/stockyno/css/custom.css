@@ -1,0 +1,73 @@
+/* ------------ CSS for Stock page --------------- */
+
+.label_side_box_container {
+	float: right;
+	color: #000;
+}
+
+.label_side_box {
+	color: #f00;
+	background-color: #eee;
+	padding: 0 10px;
+}
+
+/* ------------ CSS for Purchase page --------------- */
+
+#purchase_tbody td, #sale_tbody td {
+	border-right: solid 1px #999;
+}
+
+/*#purchase_info_box h6 {
+	margin-top: 10px;
+}*/
+
+#purchase_info_box hr, #sale_info_box hr {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+#purchase_add_form input, #sale_add_form input {
+	width: 100px;
+	padding: 0 5px;
+}
+
+.purchase_info_section, .sale_info_section {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: solid 1px #ccc;
+}
+
+.purchase_info_section.no_border, .sale_info_section.no_border {
+	border: none;
+	margin-bottom: 0;
+}
+
+.purchase_info_section h6, .sale_info_section h6 {
+	background: #373a3c;
+	color: #f8f9fa;
+	padding: 8px;
+}
+
+.purchase_info_section h6 span, .sale_info_section h6 span {
+	float: right;
+	/*padding: 0px 5px;*/
+}
+
+.form-control-plaintext {
+	transition: all 300ms ease;
+}
+
+.form-control-plaintext:hover {
+	background-color: #ffd99e;
+}
+
+
+/* ------------ CSS for sale page --------------- */
+
+.bg-insufficient {
+	background-color: #f0ad4e !important;
+}
+
+#sale_add_form input, #purchase_add_form input {
+	cursor: pointer;
+}

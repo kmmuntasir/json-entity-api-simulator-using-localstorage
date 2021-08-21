@@ -1,0 +1,180 @@
+@page {
+	size: A4 portrait;
+	margin: 0rem;
+}
+
+.clear {
+	width: 0;
+	height: 0;
+	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+h1 {
+	font-size: 1.3rem;
+}
+
+@media screen, print {
+	* {
+		font-family: 'Times New Roman';
+		/*font-family: 'monaco', 'monospace';*/
+		clear: both;
+		/*font-size: 98%;*/
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+
+	table {
+		/*page-break-inside: avoid;*/
+	}
+
+	h3 {
+		font-size: 100%;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.text-right {
+		text-align: right;
+	}
+
+	.report_table {
+		/*border: solid 1px #000;*/
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 90%;
+	}
+
+	.report_table caption {
+		font-weight: bold;
+		background-color: #ddd;
+		/*padding: 10em auto;*/
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1.2rem;
+	}
+
+	.report_table thead tr {
+		background-color: #333;
+		color: #eee;
+	}
+
+	.report_table tbody tr:nth-child(even) {
+		background-color: #eee;
+	}
+
+	.report_table tbody td:nth-child(odd) {
+		background-color: rgba(200, 200, 200, 0.3);
+	}
+
+
+	.report_table th, .report_table td {
+		/*border: solid 1px #000;*/
+		border: none;
+		padding: 0.15em;
+	}
+
+	.report_table pre {
+		margin: 0;
+	}
+
+	.summary_table th, .summary_table td {
+		width: 20%;
+	}
+
+	.main {
+		background: #fff;
+		width: calc(100% - 6em);
+		margin: 0 auto;
+		padding: 3em 3em;
+	}
+
+	.table_with_border {
+		border: solid 1px #000;
+		border-collapse: collapse;
+	}
+
+	.table_with_border td, .table_with_border th {
+		border: solid 1px #000;
+		padding: 0.2em;
+	}
+
+	.invoice_items_table {
+		width: 100%;
+	}
+
+	.amount_in_words {
+		text-transform: capitalize;
+	}
+
+	#authorized_signature {
+		border-top: solid 1px #000;
+		float: right;
+		padding-top: 0.5em;
+	}
+
+	#transaction_status_seal_container {
+		/*position: absolute;*/
+	}
+
+	#transaction_status_seal {
+		border: dashed 5px #666;
+		color: #666;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		padding: 0.1em 0.3em;
+		transform: rotate(-20deg);
+		margin-top: 1em;
+	}
+
+	.payment_list_table {
+		width: 100%;
+	}
+}
+
+@media screen {
+
+	body {
+		background: #fafafa;
+		padding-top: 1em;
+	}
+
+	.main {
+		background: #fff;
+		width: calc(100% - 6em);
+		padding: 3em 3em;
+		max-width: 700px;
+		margin: 0 auto;
+		box-shadow: 0px 0px 10px #ccc;
+	}
+
+	#invoice_print_button {
+		display: block;
+		background: #09f;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		padding: 1em;
+		float: right;
+	}
+}
+
+@media print {
+
+	#invoice_print_button {
+		display: none;
+	}
+}

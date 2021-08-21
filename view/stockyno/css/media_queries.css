@@ -1,0 +1,175 @@
+/* ---------------------------------------------------
+    MEDIAQUERIES (Mobile)
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+	.navbar-nav .dropdown-menu {
+		padding: 10px;
+	}
+
+	#main_nav_link > ul > li > button.a {
+		/*font-size: 0.8em;*/
+		/*padding: 8px !important;*/
+	}
+
+	.nav-item {
+		padding: 2px 8px;
+	}
+
+	#sidebar {
+		margin-left: -130px;
+	}
+
+	#sidebar.active {
+		margin-left: 0;
+		box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	}
+
+	#content {
+		width: 100%;
+	}
+
+	#sidebarCollapse span {
+		display: none;
+	}
+
+	#foot_icons button.a {
+		font-size: 1.3em !important;
+	}
+
+	.mobile_margin {
+		margin-left: -150px;
+	}
+
+	.card-header-btn-bar {
+		display: block;
+		flex-direction: column;
+	}
+
+	#purchase_item_select2_box, #sale_item_select2_box {
+		width: 100%;
+	}
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES (Desktop)
+----------------------------------------------------- */
+
+@media (min-width: 769px) {
+	#sidebar {
+		margin-left: 0px;
+	}
+
+	#sidebar.active {
+		margin-left: 0;
+	}
+
+	#content, #content.active {
+		width: calc(100% - 130px);
+		margin-left: 130px;
+	}
+
+	#sidebarCollapse, .sidebar-header, .overlay {
+		display: none !important;
+	}
+
+	.navbar .navbar-nav li .dropdown-menu {
+		margin-left: -90px;
+	}
+
+	.dropdown-menu {
+		margin-left: -150px;
+	}
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES (Desktop)
+----------------------------------------------------- */
+
+@media (max-width: 1366px) {
+	.navbar {
+		padding: 0;
+	}
+
+	.navbar .navbar-nav li .dropdown-menu .dropdown-item {
+		font-size: 0.8em;
+	}
+
+	#main_nav_link > ul > li > button.a {
+		font-size: 0.8em;
+		padding: 5px;
+	}
+
+	#sidebar ul li button.a {
+		font-size: 0.8em;
+	}
+
+	#sidebar .sidebar-link-icon {
+		width: 20px;
+	}
+
+	.dropdown-item {
+		padding: 0.15rem 0.65rem;
+		font-size: 0.9rem;
+		cursor: pointer;
+	}
+
+	#purchase_item_select2_box, #sale_item_select2_box {
+		width: 200px;
+	}
+
+	/* ---------------------------------------------------
+		Card Styles
+	----------------------------------------------------- */
+	.card-header {
+		padding: 6px 10px;
+	}
+
+	.card-body {
+		padding: 6px 10px 20px 10px;
+	}
+
+	.card-header-btn-bar {
+
+	}
+
+	/* ---------------------------------------------------
+		Datatables Styles
+	----------------------------------------------------- */
+	.table-responsive, .table-responsive * {
+		font-size: 0.8rem;
+	}
+}
+
+@media (min-width: 1367px) {
+	.navbar {
+		/*padding: 15px 10px;*/
+	}
+
+	#sidebar {
+		width: 200px;
+		margin-left: 0px;
+	}
+
+	#content, #content.active {
+		width: calc(100% - 200px);
+		margin-left: 200px;
+	}
+
+	#foot_icons {
+		width: 200px;
+	}
+
+	#foot_icons button.a {
+		width: 50px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	#purchase_item_select2_box, #sale_item_select2_box {
+		width: 350px;
+	}
+
+}

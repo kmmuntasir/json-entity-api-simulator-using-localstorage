@@ -1,0 +1,122 @@
+@page {
+	size: A4 portrait;
+	margin: 2rem;
+}
+
+.clear {
+	width: 0;
+	height: 0;
+	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+@media screen, print {
+	* {
+		font-family: 'Arial';
+		font-family: 'monaco', 'monospace';
+		font-size: 98%;
+		clear: both;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	table {
+		/*page-break-inside: avoid;*/
+	}
+
+	h3 {
+		font-size: 100%;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.text-right {
+		text-align: right;
+	}
+
+	.report_table {
+		/*border: solid 1px #000;*/
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 90%;
+	}
+
+	.report_table caption {
+		font-weight: bold;
+		background-color: #ddd;
+		/*padding: 10em auto;*/
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1.2rem;
+	}
+
+	.report_table thead tr {
+		background-color: #333;
+		color: #eee;
+	}
+
+	.report_table tbody tr:nth-child(even) {
+		background-color: #eee;
+	}
+
+	.report_table tbody td:nth-child(odd) {
+		background-color: rgba(200, 200, 200, 0.3);
+	}
+
+
+	.report_table th, .report_table td {
+		/*border: solid 1px #000;*/
+		border: none;
+		padding: 0.15em;
+	}
+
+	.report_table pre {
+		margin: 0;
+	}
+
+	.summary_table th, .summary_table td {
+		width: 20%;
+	}
+
+	.main {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+@media screen {
+	.report_link {
+		display: block;
+		margin: 0.2em;
+		padding: 0.2em;
+		text-decoration: none;
+		color: #fff;
+		background-color: #333;
+		border-radius: 0.2em;
+		text-align: center;
+	}
+}
+
+@media print {
+	.report_link {
+		display: none;
+	}
+
+	.report_table thead tr {
+		background-color: #fff;
+		color: #000;
+		border: solid 1px #000;
+	}
+}
