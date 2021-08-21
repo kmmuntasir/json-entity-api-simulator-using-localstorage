@@ -27,7 +27,6 @@ class M_category extends Ci_model
 
 	function delete_single_category($category_id)
 	{
-		$updated_category = array();
 		$updated_category['timestamp'] = $this->now();
 		$updated_category['is_deleted'] = 1;
 		return $this->update_single_category($category_id, $updated_category);
@@ -43,7 +42,6 @@ class M_category extends Ci_model
 
 	function restore_single_category($category_id)
 	{
-		$updated_category = array();
 		$updated_category['timestamp'] = $this->now();
 		$updated_category['is_deleted'] = 0;
 		return $this->update_single_category($category_id, $updated_category);

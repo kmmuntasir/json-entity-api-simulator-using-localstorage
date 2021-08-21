@@ -7,6 +7,10 @@ function post_process_datatable() {
 		var id = $(this).children('td:last-child()').html();
 
 		if (dt_validate_id(id)) {
+			var imgSrc = imageRoot + $(this).children('td:nth-child(3)').html();
+			var imgElement = `<img class="dataTables_image_preview" src="${imgSrc}">`;
+			$(this).children('td:nth-child(3)').html(imgElement);
+
 			var data_status = $('.page_subtitle').html();
 			var buttons = '<div class="header-dropdown"><div class="dropdown"><button class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i></button><ul class="dropdown-menu datatable_action_link">';
 

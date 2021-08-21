@@ -28,6 +28,13 @@ class Category extends Admin_Controller
 
 	function add()
 	{
+		$upload_result = $this->__upload_file('category_icon');
+		if($upload_result->status) {
+			$_POST['category_icon'] = $upload_result->file_name;
+		} else {
+			exit($upload_result->error);
+		}
+
 		$_POST['timestamp'] = $this->now();
 		$insert_id = $this->model->insert_single_category($_POST);
 		echo ($insert_id != 0) ? 'success' : 'Failed';

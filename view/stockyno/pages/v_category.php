@@ -68,7 +68,7 @@
 			</div>
 			<div class="modal-body">
 				<form class="ajax_form" id="add_form" message="Added Successfully" action="<?php echo $add_action; ?>"
-					  method="post">
+					  method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Category Name</label>
 						<input type="text" name="category_name" class="required form-control"
@@ -76,8 +76,13 @@
 					</div>
 					<div class="form-group">
 						<label>Category Icon</label>
-						<input type="text" name="category_icon" class="required form-control"
-							   placeholder="Enter Category Icon">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input required" name="category_icon">
+							<label class="custom-file-label" for="category_icon" style="background-color: #ffd99e">Upload Image</label>
+						</div>
+						<div class="custom-upload-image-preview-container">
+							<img class="custom-upload-image-preview" src="#">
+						</div>
 					</div>
 					<div class="form-group">
 						<p class="text-danger">*LIGHT ORANGE fields are required</p>
@@ -113,8 +118,13 @@
 					</div>
 					<div class="form-group">
 						<label>Category Icon</label>
-						<input type="text" name="category_icon" class="required form-control"
-							   placeholder="Enter Category Icon">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" name="category_icon">
+							<label class="custom-file-label" for="category_icon">Upload Image</label>
+						</div>
+						<div class="custom-upload-image-preview-container">
+							<img class="custom-upload-image-preview" src="#">
+						</div>
 					</div>
 					<div class="form-group">
 						<p class="text-danger">*LIGHT ORANGE fields are required</p>

@@ -369,6 +369,9 @@ ul ul a {
 	padding: 0.3rem 0.75rem;
 }
 
+.dataTables_image_preview {
+	width: 50px;
+}
 /* ---------------------------------------------------- */
 
 .table-responsive, .table-responsive * {
@@ -490,4 +493,15 @@ ul ul a {
 
 .select2-selection__placeholder, .select2-results__option {
 	font-size: 14px;
+}
+
+/* ---------------------------------------------------
+    Custom Upload Image Styles
+----------------------------------------------------- */
+
+.custom-upload-image-preview {
+	display: none;
+	width: 100px;
+	margin: 10px auto;
+	box-shadow: 0px 0px 5px #ccc;
 }

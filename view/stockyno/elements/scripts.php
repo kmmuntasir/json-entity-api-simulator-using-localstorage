@@ -28,10 +28,6 @@
 <!-- jQuery Timepicker JS -->
 <script src="<?php echo $fullpath; ?>assets/jquery_timepicker/jquery.timepicker.min.js"></script>
 
-
-<!-- Custom JS for Dashboard Calculator -->
-<script src="<?php echo $fullpath; ?>js/calculator.js"></script>
-
 <!-- json-simulator custom js -->
 <script src="<?php echo $fullpath; ?>js/json-simulator.js"></script>
 <script src="<?php echo $fullpath; ?>js/json-simulator-datatables.js"></script>

@@ -6,8 +6,7 @@ class ST_Controller extends CI_Controller
 
 	public $data = array();
 	public $viewpath = '';
-	public $upload_path = 'uploads/';
-	public $session_prefix = 'st_admin';
+	public $image_upload_path = 'images/';
 
 	public function __construct()
 	{
@@ -16,12 +15,8 @@ class ST_Controller extends CI_Controller
 		// Setting Timezone
 		date_default_timezone_set("Asia/Dhaka");
 
-		// loading models (If necessary)
-
 		$this->viewpath = $this->template . '/';
 		$this->data['fullpath'] = base_url() . VIEW_DIR . '/' . $this->template . '/';
-		$this->data['page_title'] = '';
-		$this->data['page'] = '';
 		$this->data['controller'] = site_url('/');
 	}
 
@@ -42,14 +37,14 @@ class ST_Controller extends CI_Controller
 		return true;
 	}
 
-	public function __do_upload($field, $config, $rename_flag = false)
+	public function __do_upload($field, $config, $rename = false)
 	{
 		/*
 			__do_upload() is a custom function to avoid the problem of loading the same library multiple times in the same CI controller and keep the code clean. It uses the same $config array format of CI upload library. $field is the name of the input field of the desired file upload form. 
 		*/
 		$result = array();
 
-		if ($rename_flag) {
+		if ($rename) {
 			// Generating a unique name using current microtime
 			$file_name = substr(md5(microtime(true) . $_FILES[$field]['name']), 1, 6);
 			// Extracting the filename extension from the original filename
@@ -71,6 +66,39 @@ class ST_Controller extends CI_Controller
 			$result['success'] = $this->upload->data();
 			return $result;
 		}
+	}
+
+	public function __upload_file($field) {
+		$response = new stdClass();
+		$response->status = false;
+		$response->error = 'File Upload Error<br>';
+		$response->file_name = NULL;
+
+
+		if(count($_FILES) > 0) {
+
+			// Configuration for Image File Upload
+			$config['upload_path']          = $this->image_upload_path;
+			$config['allowed_types']        = 'jpg|jpeg|png|gif';
+			$config['max_size']             = 1024; // 1 Megabytes
+
+			// Uploading File
+			if($_FILES[$field]['error'] == 0) {
+				$upload = $this->__do_upload($field, $config, true);
+
+				if(!$upload['error']) {
+					$response->status = true;
+					$response->file_name = $upload['success']['file_name'];
+				}
+				else {
+					$response->error .= $upload['error'];
+				}
+			}
+		} else {
+			$response->error .= 'No Image File Found';
+		}
+
+		return $response;
 	}
 
 	public function _dt_server_post_check($postdata = NULL)

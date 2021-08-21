@@ -7,6 +7,7 @@
 <div class="databox">
 	<input type="hidden" id="page" value="<?php echo $page; ?>">
 	<input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
+	<input type="hidden" id="imageRoot" value="<?php echo base_url('images/'); ?>">
 	<input type="hidden" id="fetch_action" value="<?php echo $fetch_action; ?>">
 	<input type="hidden" id="delete_action" value="<?php echo $delete_action; ?>">
 	<input type="hidden" id="restore_action" value="<?php echo $restore_action; ?>">

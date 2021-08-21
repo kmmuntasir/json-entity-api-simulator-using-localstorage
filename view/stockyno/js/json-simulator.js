@@ -348,6 +348,8 @@ function dt_validate_id(id) {
 // Function for resetting add_form
 $('#add_modal').on('shown.bs.modal', function (e) {
 	$('#add_modal form')[0].reset();
+	$('.custom-file-label').html('Upload Image');
+	$('.custom-upload-image-preview').attr('src', '#').hide();
 })
 
 // Function for Adding =============================================================
@@ -458,6 +460,9 @@ $(document).on('click', '.edit', function () {
 	var datastring = {};
 	datastring[entity_id_post_name] = id;
 	$('#edit_form')[0].reset();
+
+	$('.custom-file-label').html('Upload Image');
+	$('.custom-upload-image-preview').attr('src', '#').css('display', 'none');
 
 	// alert(id);
 
@@ -630,4 +635,17 @@ $('.select2_ajax').each(function () {
 		// minimumInputLength: 1,
 		dropdownParent: $(selector).parent()
 	});
+});
+
+
+$('.custom-file-input').change(function() {
+	var fileToBeUploaded = $('.custom-file-input')[0].files[0];
+	var fileName = fileToBeUploaded.name;
+	$(this).siblings('.custom-file-label').html(fileName);
+
+	var thumbnailSource = URL.createObjectURL(fileToBeUploaded);
+
+	var imgElement = $(this).parent('div').siblings('div').children('.custom-upload-image-preview');
+	imgElement.attr("src", thumbnailSource);
+	imgElement.css('display', 'block');
 });
