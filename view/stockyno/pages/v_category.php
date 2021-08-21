@@ -29,7 +29,7 @@
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
-			<table data-sort-dir="asc" data-sort="2" data-server="yes" data-page="<?php echo $page; ?>"
+			<table data-sort-dir="desc" data-sort="1" data-server="yes" data-page="<?php echo $page; ?>"
 				   data-source="<?php echo $data_source; ?>" class="table table-striped table-hover table-sm datatable">
 				<thead>
 				<tr>
