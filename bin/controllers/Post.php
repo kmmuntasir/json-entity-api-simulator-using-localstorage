@@ -38,8 +38,7 @@ class Post extends Admin_Controller
 			exit($upload_result->error);
 		}
 
-		$_POST['timestamp'] = $this->now();
-		$insert_id = $this->model->insert_single_post($_POST);
+		$insert_id = $this->model->insert_single_post($_POST, $this->now());
 		echo ($insert_id != 0) ? 'success' : 'Failed';
 	}
 
@@ -65,7 +64,7 @@ class Post extends Admin_Controller
 			}
 		}
 
-		$stat = $this->model->update_single_post($_POST['post_id'], $_POST, $this->now);
+		$stat = $this->model->update_single_post($_POST['post_id'], $_POST, $this->now());
 		if($stat) {
 			if($upload_result) {
 				unlink($this->image_upload_path . $old_post->$upload_file_field_name);

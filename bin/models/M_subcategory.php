@@ -56,11 +56,15 @@ class M_subcategory extends Ci_model
 		return $this->update_single_subcategory($subcategory_id, $updated_subcategory, $this->now());
 	}
 
-	function insert_single_subcategory($subcategory)
+	function insert_single_subcategory($subcategory, $timestamp)
 	{
+		$subcategory['timestamp'] = $timestamp;
+		$category['timestamp'] = $timestamp;
+
 		$this->db->trans_start();
 		$this->db->insert('subcategory', $subcategory);
 		$insert_id = $this->db->insert_id();
+		$this->db->where('category_id', $subcategory['category_id'])->update('category', $category);
 		$this->db->trans_complete();
 		return $insert_id;
 	}

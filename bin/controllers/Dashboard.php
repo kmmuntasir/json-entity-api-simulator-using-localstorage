@@ -3,17 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends Admin_Controller
 {
-	public $json_path;
-	public $post_path;
-	public $page_size;
 	function __construct()
 	{
 		parent::__construct();
 		$this->__initialize_controller($this->router->fetch_class());
-
-		$this->page_size = 5;
-		$this->json_path = 'jsons/';
-		$this->post_path = $this->json_path . 'posts/';
 	}
 
 	public function index()
@@ -41,6 +34,7 @@ class Dashboard extends Admin_Controller
 	}
 
 	public function rebuild_categories() {
+		ini_set('max_execution_time', 0);
 		$this->deleteDir($this->json_path);
 		mkdir($this->json_path);
 		mkdir($this->post_path);

@@ -58,13 +58,28 @@ class M_post extends Ci_model
 		return $this->update_single_post($post_id, $updated_post, $this->now());
 	}
 
-	function insert_single_post($post)
+	function insert_single_post($post, $timestamp)
 	{
+		$old_subcategory = $this->fetch_single_subcategory($post['subcategory_id']);
+
+		$post['timestamp'] = $timestamp;
+		$post['category_id'] = $old_subcategory->category_id;
+		$subcategory['timestamp'] = $timestamp;
+		$category['timestamp'] = $timestamp;
+
+
 		$this->db->trans_start();
 		$this->db->insert('post', $post);
 		$insert_id = $this->db->insert_id();
+		$this->db->where('subcategory_id', $post['subcategory_id'])->update('subcategory', $subcategory);
+		$this->db->where('category_id', $post['category_id'])->update('category', $category);
 		$this->db->trans_complete();
 		return $insert_id;
+	}
+
+	function fetch_single_subcategory($subcategory_id) {
+		$this->db->where('subcategory_id', $subcategory_id);
+		return $this->db->get('subcategory')->row();
 	}
 
 }

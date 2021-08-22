@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ST_Controller extends CI_Controller
 {
+	public $json_path;
+	public $post_path;
+	public $page_size;
 
 	public $data = array();
 	public $viewpath = '';
@@ -11,6 +14,10 @@ class ST_Controller extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->page_size = 5;
+		$this->json_path = 'jsons/';
+		$this->post_path = $this->json_path . 'posts/';
 
 		// Setting Timezone
 		date_default_timezone_set("Asia/Dhaka");

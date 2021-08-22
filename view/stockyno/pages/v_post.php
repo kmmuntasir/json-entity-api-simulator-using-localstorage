@@ -141,6 +141,7 @@
 						<input type="text" name="post_title" class="required form-control"
 							   placeholder="Enter Post Title">
 						<input type="hidden" name="<?php echo $entity_id_field_name; ?>">
+						<input type="hidden" name="category_id">
 					</div>
 					<div class="form-group">
 						<label>Post Subtitle</label>
