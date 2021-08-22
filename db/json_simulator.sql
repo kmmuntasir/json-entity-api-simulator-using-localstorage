@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 22, 2021 at 04:26 AM
+-- Generation Time: Aug 22, 2021 at 06:22 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -41,7 +41,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `category_icon`, `timestamp`, `is_deleted`) VALUES
-(1, 'AWS', 'f4aeb7198a52.jpg', '2021-08-22 02:26:02', b'0'),
+(1, 'AWS', 'f4aeb7198a52.jpg', '2021-08-22 02:59:31', b'0'),
 (2, 'DynamoDB', '638dd4ec7e0d.jpg', '2021-08-22 02:16:07', b'0'),
 (3, 'C', 'e980215e3a58.jpg', '2021-08-21 23:50:13', b'0'),
 (4, 'C++', 'cf5c89012d3c.jpg', '2021-08-21 23:50:21', b'0'),
@@ -112,12 +112,12 @@ INSERT INTO `post` (`post_id`, `post_title`, `post_subtitle`, `post_image`, `pos
 (19, 'Post-PHP', 'Post-PHP Subtitle', 'f91b197e802e.jpg', 'assdf', '2021-08-22 00:05:35', b'1', 1, 1),
 (20, 'Post-PostgreSQL', 'Post-PostgreSQL Subtitle', 'e8680f0f32ad.jpg', 'asfsdfsf', '2021-08-22 00:02:58', b'0', 1, 1),
 (21, 'Post-Redis', 'Post-Redis Subtitle', '47dcef303874.jpg', 'asdfsdf', '2021-08-22 00:03:11', b'0', 1, 1),
-(22, 'Post-Shellscript', 'Post-Shellscript Subtitle', 'f58eb257b3d7.jpg', 'asdfsdf', '2021-08-22 00:04:41', b'1', 1, 1),
+(22, 'Post-Shellscript', 'Post-Shellscript Subtitle', 'f58eb257b3d7.jpg', 'asdfsdf', '2021-08-22 02:44:15', b'0', 1, 1),
 (23, 'Post-SpringBoot', 'Post-SpringBoot Subtitle', 'f7b1ccde0abd.jpg', 'asfsfsdf', '2021-08-22 00:03:48', b'0', 1, 1),
 (24, 'Post-Linux', 'Post-Linux Subtitle', 'a0649794de21.jpg', 'asdsdf', '2021-08-22 00:03:58', b'0', 1, 1),
 (25, 'Post-Git', 'Post-Git Subtitle', 'ccb83bc901cb.jpg', 'asdfsdf', '2021-08-22 02:15:02', b'0', 1, 1),
-(26, 'Post-VueJS', 'Post-VueJS Subtitle', 'd1deba20ee22.jpg', 'assdf', '2021-08-22 00:04:38', b'1', 1, 1),
-(38, 'NewPost-VueJS', 'NewPost-VueJS Subtitle', 'bba9497c82b6.jpg', 'asdfsfsdf', '2021-08-22 02:26:02', b'0', 26, 1);
+(26, 'Post-VueJS', 'Post-VueJS Subtitle', 'd1deba20ee22.jpg', 'assdf', '2021-08-22 02:44:01', b'0', 1, 1),
+(38, 'NewPost-VueJS', 'NewPost-VueJS Subtitle', 'bba9497c82b6.jpg', 'asdfsfsdf', '2021-08-22 02:59:31', b'0', 26, 1);
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ INSERT INTO `subcategory` (`subcategory_id`, `subcategory_name`, `subcategory_ic
 (23, 'Sub-SpringBoot', 'b122ac678d99.jpg', '2021-08-21 23:57:16', b'0', 1),
 (24, 'Sub-Linux', '7a890a7d9192.jpg', '2021-08-22 00:05:44', b'1', 1),
 (25, 'Sub-Git', 'a6345974242b.jpg', '2021-08-22 00:04:51', b'1', 1),
-(26, 'Sub-VueJS', 'fd6a7ae09e3a.jpg', '2021-08-22 02:26:02', b'0', 1),
+(26, 'Sub-VueJS', 'fd6a7ae09e3a.jpg', '2021-08-22 02:59:31', b'0', 1),
 (27, 'NewSub-DynamoDB', 'ab7c7a4f9381.jpg', '2021-08-22 02:16:07', b'0', 2);
 
 --
