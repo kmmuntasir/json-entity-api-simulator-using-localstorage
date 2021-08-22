@@ -37,6 +37,7 @@
 					<th>Post Title</th>
 					<th>Image</th>
 					<th>Subcategory</th>
+					<th>Category</th>
 					<th>Updated</th>
 					<th data-sortable="false" id="action_thead"></th>
 				</tr>
@@ -47,6 +48,7 @@
 					<td>Post Title</td>
 					<td>Image</td>
 					<td>Subcategory</td>
+					<td>Category</td>
 					<td>Updated</td>
 					<td id="action_tfoot"></td>
 				</tr>

@@ -39,7 +39,12 @@ class Post extends Admin_Controller
 		}
 
 		$insert_id = $this->model->insert_single_post($_POST, $this->now());
-		echo ($insert_id != 0) ? 'success' : 'Failed';
+		if($insert_id != 0) {
+			echo 'success';
+			$this->update_timestamp_for_post($insert_id);
+		} else {
+			echo 'Failed';
+		}
 	}
 
 	function update()
@@ -70,6 +75,7 @@ class Post extends Admin_Controller
 				unlink($this->image_upload_path . $old_post->$upload_file_field_name);
 			}
 			echo 'success';
+			$this->update_timestamp_for_post($_POST['post_id']);
 		} else {
 			if($upload_result) {
 				unlink($this->image_upload_path . $upload_result->file_name);
@@ -81,12 +87,22 @@ class Post extends Admin_Controller
 	function delete()
 	{
 		$stat = $this->model->delete_single_post($_POST['post_id']);
-		echo ($stat) ? 'success' : 'Failed';
+		if($stat) {
+			echo 'success';
+			$this->update_timestamp_for_post($_POST['post_id']);
+		} else {
+			echo 'Failed';
+		}
 	}
 
 	function restore()
 	{
 		$stat = $this->model->restore_single_post($_POST['post_id']);
-		echo ($stat) ? 'success' : 'Failed';
+		if($stat) {
+			echo 'success';
+			$this->update_timestamp_for_post($_POST['post_id']);
+		} else {
+			echo 'Failed';
+		}
 	}
 }

@@ -11,12 +11,13 @@ class M_post extends Ci_model
 	function dt_get_all_posts($is_deleted = 0, $postdata = NULL)
 	{
 		if ($postdata) {
-			$select = "post_id, post_title, post_image, subcategory_name, post.timestamp, post_id as cat_id";
+			$select = "post_id, post_title, post_image, subcategory_name, category_name, post.timestamp, post_id as cat_id";
 			$columns = array(
 				'post_id',
 				'post_title',
 				'post_image',
 				'subcategory_name',
+				'category_name',
 				'post.timestamp',
 				'post_id'
 			);
@@ -24,6 +25,7 @@ class M_post extends Ci_model
 		} else {
 			$this->db->where('post.is_deleted', $is_deleted);
 			$this->db->join('subcategory', 'subcategory.subcategory_id = post.subcategory_id', 'left');
+			$this->db->join('category', 'category.category_id = post.category_id', 'left');
 		}
 	}
 
@@ -40,14 +42,16 @@ class M_post extends Ci_model
 
 	function update_single_post($post_id, $post, $timestamp)
 	{
+		$old_post = $this->get_single_post($post_id);
+
 		$post['timestamp'] = $timestamp;
 		$subcategory['timestamp'] = $timestamp;
 		$category['timestamp'] = $timestamp;
 
 		$this->db->trans_start();
 		$this->db->where('post_id', $post_id)->update('post', $post);
-		$this->db->where('subcategory_id', $post['subcategory_id'])->update('subcategory', $subcategory);
-		$this->db->where('category_id', $post['category_id'])->update('category', $category);
+		$this->db->where('subcategory_id', $old_post->subcategory_id)->update('subcategory', $subcategory);
+		$this->db->where('category_id', $old_post->category_id)->update('category', $category);
 		$this->db->trans_complete();
 		return $this->db->trans_status();
 	}

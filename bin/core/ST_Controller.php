@@ -6,6 +6,11 @@ class ST_Controller extends CI_Controller
 	public $json_path;
 	public $post_path;
 	public $page_size;
+	public $json_extension = '.json';
+	public $category_file_prefix = 'category_page_';
+	public $subcategory_file_prefix = 'subcategory_by_category_';
+	public $post_file_prefix = 'post_by_subcategory_';
+	public $page_middle_text = '_page_';
 
 	public $data = array();
 	public $viewpath = '';
@@ -444,6 +449,7 @@ class Admin_Controller extends ST_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model("m_common");
 	}
 
 	function __initialize_controller($controller, $load_models = true)
@@ -462,6 +468,78 @@ class Admin_Controller extends ST_Controller
 		$this->data['delete_action'] = $this->refer('delete');
 		$this->data['restore_action'] = $this->refer('restore');
 		$this->data['fetch_action'] = $this->refer('fetch');
+	}
+
+	function update_timestamp_for_category($category_id) {
+		$category = $this->m_common->fetch('category', $category_id);
+		unset($category->is_deleted);
+
+		$category_serial = $this->m_common->fetch_category(true, 0, 0, $category->category_id) + 1;
+		$category_page = $category_serial / $this->page_size;
+		if(is_float($category_page)) $category_page = floor($category_page) + 1;
+
+		$ranged_categories = $this->m_common->fetch_category(false, ($category_page - 1) * $this->page_size, $this->page_size, NULL);
+
+//		$this->tabular($ranged_categories);
+
+		$file_name = $this->json_path
+			. $this->category_file_prefix
+			. $category_page
+			. $this->json_extension;
+//		$this->printer($file_name);
+		$this->writeJsonFile($file_name, $ranged_categories);
+	}
+
+	function update_timestamp_for_subcategory($subcategory_id) {
+		$subcategory = $this->m_common->fetch('subcategory', $subcategory_id);
+		unset($subcategory->is_deleted);
+
+		$subcategory_serial = $this->m_common->fetch_subcategory($subcategory->category_id, true, 0, 0, $subcategory->subcategory_id) + 1;
+		$subcategory_page = $subcategory_serial / $this->page_size;
+		if(is_float($subcategory_page)) $subcategory_page = floor($subcategory_page) + 1;
+
+		$ranged_subcategories = $this->m_common->fetch_subcategory($subcategory->category_id, false, ($subcategory_page - 1) * $this->page_size, $this->page_size, NULL);
+
+//		$this->tabular($ranged_subcategories);
+
+		$file_name = $this->json_path
+			. $this->subcategory_file_prefix
+			. $subcategory->category_id
+			. $this->page_middle_text
+			. $subcategory_page
+			. $this->json_extension;
+//		$this->printer($file_name);
+		$this->writeJsonFile($file_name, $ranged_subcategories);
+
+		$this->update_timestamp_for_category($subcategory->category_id);
+	}
+
+	function update_timestamp_for_post($post_id) {
+		$post = $this->m_common->fetch('post', $post_id);
+		unset($post->is_deleted);
+
+		$post_file = $this->post_path . $post->post_id . '.json';
+		$this->writeJsonFile($post_file, $post);
+		unset($post->post_content);
+
+		$post_serial = $this->m_common->fetch_post($post->subcategory_id, true, 0, 0, $post->post_id) + 1;
+		$post_page = $post_serial / $this->page_size;
+		if(is_float($post_page)) $post_page = floor($post_page) + 1;
+
+		$ranged_posts = $this->m_common->fetch_post($post->subcategory_id, false, ($post_page - 1) * $this->page_size, $this->page_size, NULL, false);
+
+//		$this->tabular($ranged_posts);
+
+		$file_name = $this->json_path
+			. $this->post_file_prefix
+			. $post->subcategory_id
+			. $this->page_middle_text
+			. $post_page
+			. $this->json_extension;
+//		$this->printer($file_name);
+		$this->writeJsonFile($file_name, $ranged_posts);
+
+		$this->update_timestamp_for_subcategory($post->subcategory_id);
 	}
 
 }

@@ -38,7 +38,12 @@ class Category extends Admin_Controller
 
 		$_POST['timestamp'] = $this->now();
 		$insert_id = $this->model->insert_single_category($_POST);
-		echo ($insert_id != 0) ? 'success' : 'Failed';
+		if($insert_id != 0) {
+			echo 'success';
+			$this->update_timestamp_for_category($insert_id);
+		} else {
+			echo 'Failed';
+		}
 	}
 
 	function update()
@@ -70,6 +75,7 @@ class Category extends Admin_Controller
 				unlink($this->image_upload_path . $old_category->$upload_file_field_name);
 			}
 			echo 'success';
+			$this->update_timestamp_for_category($_POST['category_id']);
 		} else {
 			if($upload_result) {
 				unlink($this->image_upload_path . $upload_result->file_name);
@@ -81,12 +87,22 @@ class Category extends Admin_Controller
 	function delete()
 	{
 		$stat = $this->model->delete_single_category($_POST['category_id']);
-		echo ($stat) ? 'success' : 'Failed';
+		if($stat) {
+			echo 'success';
+			$this->update_timestamp_for_category($_POST['category_id']);
+		} else {
+			echo 'Failed';
+		}
 	}
 
 	function restore()
 	{
 		$stat = $this->model->restore_single_category($_POST['category_id']);
-		echo ($stat) ? 'success' : 'Failed';
+		if($stat) {
+			echo 'success';
+			$this->update_timestamp_for_category($_POST['category_id']);
+		} else {
+			echo 'Failed';
+		}
 	}
 }
