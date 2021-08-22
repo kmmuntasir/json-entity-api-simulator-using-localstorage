@@ -1,37 +1,40 @@
-[
-    {
-        "subcategory_id": "1",
-        "subcategory_name": "Sub-AWS",
-        "subcategory_icon": "a38bc8353a97.jpg",
-        "timestamp": "2021-08-22 08:15:02",
-        "category_id": "1"
-    },
-    {
-        "subcategory_id": "2",
-        "subcategory_name": "Sub-DynamoDB",
-        "subcategory_icon": "437e0c7e95f1.jpg",
-        "timestamp": "2021-08-22 05:54:32",
-        "category_id": "1"
-    },
-    {
-        "subcategory_id": "3",
-        "subcategory_name": "Sub-C",
-        "subcategory_icon": "a67144108173.jpg",
-        "timestamp": "2021-08-22 05:54:38",
-        "category_id": "1"
-    },
-    {
-        "subcategory_id": "4",
-        "subcategory_name": "Sub-C++",
-        "subcategory_icon": "460a32659b5a.jpg",
-        "timestamp": "2021-08-22 05:54:45",
-        "category_id": "1"
-    },
-    {
-        "subcategory_id": "5",
-        "subcategory_name": "Sub-Codeigniter",
-        "subcategory_icon": "dde2d1025108.jpg",
-        "timestamp": "2021-08-22 05:54:54",
-        "category_id": "1"
-    }
-]
+{
+    "hasNextPage": true,
+    "data": [
+        {
+            "subcategory_id": "1",
+            "subcategory_name": "Sub-AWS",
+            "subcategory_icon": "a38bc8353a97.jpg",
+            "timestamp": "2021-08-22 08:15:02",
+            "category_id": "1"
+        },
+        {
+            "subcategory_id": "2",
+            "subcategory_name": "Sub-DynamoDB",
+            "subcategory_icon": "437e0c7e95f1.jpg",
+            "timestamp": "2021-08-22 05:54:32",
+            "category_id": "1"
+        },
+        {
+            "subcategory_id": "3",
+            "subcategory_name": "Sub-C",
+            "subcategory_icon": "a67144108173.jpg",
+            "timestamp": "2021-08-22 05:54:38",
+            "category_id": "1"
+        },
+        {
+            "subcategory_id": "4",
+            "subcategory_name": "Sub-C++",
+            "subcategory_icon": "460a32659b5a.jpg",
+            "timestamp": "2021-08-22 05:54:45",
+            "category_id": "1"
+        },
+        {
+            "subcategory_id": "5",
+            "subcategory_name": "Sub-Codeigniter",
+            "subcategory_icon": "dde2d1025108.jpg",
+            "timestamp": "2021-08-22 05:54:54",
+            "category_id": "1"
+        }
+    ]
+}

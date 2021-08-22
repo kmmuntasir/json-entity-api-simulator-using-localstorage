@@ -22,12 +22,17 @@ class Dashboard extends Admin_Controller
 	}
 
 	public function rebuild_json() {
+		$this->printer("========== Starting Rebuild ===========");
 		ini_set('max_execution_time', 0);
 		if(is_dir($this->json_path)) {
+			$this->printer("========== Removing Old JSONs ===========");
 			$this->deleteDir($this->json_path);
 		}
+		$this->printer("========== Creating Directory $this->json_path ===========");
 		mkdir($this->json_path);
+		$this->printer("========== Creating Directory $this->post_path ===========");
 		mkdir($this->post_path);
+		$this->printer("========== Rebuilding Categories ===========");
 		$this->rebuild_categories();
 	}
 
@@ -42,13 +47,19 @@ class Dashboard extends Admin_Controller
 
 //			$this->tabular($categories);
 
+			$content = new stdClass();
+			$content->hasNextPage = $category_page < $category_total_page;
+			$content->data = $categories;
+
 			$file_name = $this->json_path
 				. $this->category_file_prefix
 				. $category_page
 				. $this->json_extension;
-			$this->writeJsonFile($file_name, $categories);
+			$this->printer("========== Writing Category Page $category_page ===========");
+			$this->writeJsonFile($file_name, $content);
 
 			foreach($categories as $category) {
+				$this->printer("========== Rebuilding Subcategories for Category $category->category_id ===========");
 				$this->rebuild_subcategories($category->category_id);
 			}
 		}
@@ -65,15 +76,21 @@ class Dashboard extends Admin_Controller
 
 //			$this->tabular($subcategories);
 
+			$content = new stdClass();
+			$content->hasNextPage = $subcategory_page < $subcategory_total_page;
+			$content->data = $subcategories;
+
 			$file_name = $this->json_path
 				. $this->subcategory_file_prefix
 				. $category_id
 				. $this->page_middle_text
 				. $subcategory_page
 				. $this->json_extension;
-			$this->writeJsonFile($file_name, $subcategories);
+			$this->printer("========== Writing Subcategory Page $subcategory_page ===========");
+			$this->writeJsonFile($file_name, $content);
 
 			foreach($subcategories as $subcategory) {
+				$this->printer("========== Rebuilding Posts for Subcategory $subcategory->subcategory_id ===========");
 				$this->rebuild_posts($subcategory->subcategory_id);
 			}
 		}
@@ -92,9 +109,14 @@ class Dashboard extends Admin_Controller
 
 			foreach ($posts as $post) {
 				$file_name = $this->post_path . $post->post_id . '.json';
+				$this->printer("========== Writing JSON for Single Post $post->post_id ===========");
 				$this->writeJsonFile($file_name, $post);
 				unset($post->post_content);
 			}
+
+			$content = new stdClass();
+			$content->hasNextPage = $post_page < $post_total_page;
+			$content->data = $posts;
 
 			$file_name = $this->json_path
 				. $this->post_file_prefix
@@ -102,11 +124,12 @@ class Dashboard extends Admin_Controller
 				. $this->page_middle_text
 				. $post_page
 				. $this->json_extension;
-			$this->writeJsonFile($file_name, $posts);
+			$this->printer("========== Writing Post Page $post_page ===========");
+			$this->writeJsonFile($file_name, $content);
 		}
 	}
 
-	public function test() {
-		$this->update_timestamp_for_category(12);
-	}
+//	public function test() {
+//		$this->update_timestamp_for_post(25);
+//	}
 }

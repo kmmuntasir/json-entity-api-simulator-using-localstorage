@@ -477,17 +477,23 @@ class Admin_Controller extends ST_Controller
 		$category_serial = $this->m_common->fetch_category(true, 0, 0, $category->category_id) + 1;
 		$category_page = $category_serial / $this->page_size;
 		if(is_float($category_page)) $category_page = floor($category_page) + 1;
+		$category_total_page = $this->m_common->fetch_category(true) / $this->page_size;
+		if(is_float($category_total_page)) $category_total_page = floor($category_total_page) + 1;
 
 		$ranged_categories = $this->m_common->fetch_category(false, ($category_page - 1) * $this->page_size, $this->page_size, NULL);
 
 //		$this->tabular($ranged_categories);
+
+		$content = new stdClass();
+		$content->hasNextPage = $category_page < $category_total_page;
+		$content->data = $ranged_categories;
 
 		$file_name = $this->json_path
 			. $this->category_file_prefix
 			. $category_page
 			. $this->json_extension;
 //		$this->printer($file_name);
-		$this->writeJsonFile($file_name, $ranged_categories);
+		$this->writeJsonFile($file_name, $content);
 	}
 
 	function update_timestamp_for_subcategory($subcategory_id) {
@@ -497,10 +503,16 @@ class Admin_Controller extends ST_Controller
 		$subcategory_serial = $this->m_common->fetch_subcategory($subcategory->category_id, true, 0, 0, $subcategory->subcategory_id) + 1;
 		$subcategory_page = $subcategory_serial / $this->page_size;
 		if(is_float($subcategory_page)) $subcategory_page = floor($subcategory_page) + 1;
+		$subcategory_total_page = $this->m_common->fetch_subcategory($subcategory->category_id, true) / $this->page_size;
+		if(is_float($subcategory_total_page)) $subcategory_total_page = floor($subcategory_total_page) + 1;
 
 		$ranged_subcategories = $this->m_common->fetch_subcategory($subcategory->category_id, false, ($subcategory_page - 1) * $this->page_size, $this->page_size, NULL);
 
 //		$this->tabular($ranged_subcategories);
+
+		$content = new stdClass();
+		$content->hasNextPage = $subcategory_page < $subcategory_total_page;
+		$content->data = $ranged_subcategories;
 
 		$file_name = $this->json_path
 			. $this->subcategory_file_prefix
@@ -509,7 +521,7 @@ class Admin_Controller extends ST_Controller
 			. $subcategory_page
 			. $this->json_extension;
 //		$this->printer($file_name);
-		$this->writeJsonFile($file_name, $ranged_subcategories);
+		$this->writeJsonFile($file_name, $content);
 
 		$this->update_timestamp_for_category($subcategory->category_id);
 	}
@@ -525,10 +537,16 @@ class Admin_Controller extends ST_Controller
 		$post_serial = $this->m_common->fetch_post($post->subcategory_id, true, 0, 0, $post->post_id) + 1;
 		$post_page = $post_serial / $this->page_size;
 		if(is_float($post_page)) $post_page = floor($post_page) + 1;
+		$post_total_page = $this->m_common->fetch_post($post->subcategory_id, true) / $this->page_size;
+		if(is_float($post_total_page)) $post_total_page = floor($post_total_page) + 1;
 
 		$ranged_posts = $this->m_common->fetch_post($post->subcategory_id, false, ($post_page - 1) * $this->page_size, $this->page_size, NULL, false);
 
 //		$this->tabular($ranged_posts);
+
+		$content = new stdClass();
+		$content->hasNextPage = $post_page < $post_total_page;
+		$content->data = $ranged_posts;
 
 		$file_name = $this->json_path
 			. $this->post_file_prefix
@@ -537,7 +555,7 @@ class Admin_Controller extends ST_Controller
 			. $post_page
 			. $this->json_extension;
 //		$this->printer($file_name);
-		$this->writeJsonFile($file_name, $ranged_posts);
+		$this->writeJsonFile($file_name, $content);
 
 		$this->update_timestamp_for_subcategory($post->subcategory_id);
 	}

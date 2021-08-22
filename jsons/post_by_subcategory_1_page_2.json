@@ -1,47 +1,50 @@
-[
-    {
-        "post_id": "6",
-        "post_title": "Post-Dart",
-        "post_subtitle": "Post-Dart Subtitle",
-        "post_image": "6b7ea389b3e7.jpg",
-        "timestamp": "2021-08-22 05:59:22",
-        "subcategory_id": "1",
-        "category_id": "1"
-    },
-    {
-        "post_id": "7",
-        "post_title": "Post-Docker",
-        "post_subtitle": "Post-Docker Subtitle",
-        "post_image": "67c4cc24d365.jpg",
-        "timestamp": "2021-08-22 05:59:36",
-        "subcategory_id": "1",
-        "category_id": "1"
-    },
-    {
-        "post_id": "8",
-        "post_title": "Post-Flutter",
-        "post_subtitle": "Post-Flutter Subtitle",
-        "post_image": "e87020cf2294.jpg",
-        "timestamp": "2021-08-22 05:59:49",
-        "subcategory_id": "1",
-        "category_id": "1"
-    },
-    {
-        "post_id": "9",
-        "post_title": "Post-GitActions",
-        "post_subtitle": "Post-GitActions Subtitle",
-        "post_image": "514702d74b05.jpg",
-        "timestamp": "2021-08-22 06:00:07",
-        "subcategory_id": "1",
-        "category_id": "1"
-    },
-    {
-        "post_id": "10",
-        "post_title": "Post-HTML\/CSS",
-        "post_subtitle": "Post-HTML\/CSS Subtitle",
-        "post_image": "f820d753e1c9.jpg",
-        "timestamp": "2021-08-22 06:00:25",
-        "subcategory_id": "1",
-        "category_id": "1"
-    }
-]
+{
+    "hasNextPage": true,
+    "data": [
+        {
+            "post_id": "6",
+            "post_title": "Post-Dart",
+            "post_subtitle": "Post-Dart Subtitle",
+            "post_image": "6b7ea389b3e7.jpg",
+            "timestamp": "2021-08-22 05:59:22",
+            "subcategory_id": "1",
+            "category_id": "1"
+        },
+        {
+            "post_id": "7",
+            "post_title": "Post-Docker",
+            "post_subtitle": "Post-Docker Subtitle",
+            "post_image": "67c4cc24d365.jpg",
+            "timestamp": "2021-08-22 05:59:36",
+            "subcategory_id": "1",
+            "category_id": "1"
+        },
+        {
+            "post_id": "8",
+            "post_title": "Post-Flutter",
+            "post_subtitle": "Post-Flutter Subtitle",
+            "post_image": "e87020cf2294.jpg",
+            "timestamp": "2021-08-22 05:59:49",
+            "subcategory_id": "1",
+            "category_id": "1"
+        },
+        {
+            "post_id": "9",
+            "post_title": "Post-GitActions",
+            "post_subtitle": "Post-GitActions Subtitle",
+            "post_image": "514702d74b05.jpg",
+            "timestamp": "2021-08-22 06:00:07",
+            "subcategory_id": "1",
+            "category_id": "1"
+        },
+        {
+            "post_id": "10",
+            "post_title": "Post-HTML\/CSS",
+            "post_subtitle": "Post-HTML\/CSS Subtitle",
+            "post_image": "f820d753e1c9.jpg",
+            "timestamp": "2021-08-22 06:00:25",
+            "subcategory_id": "1",
+            "category_id": "1"
+        }
+    ]
+}
