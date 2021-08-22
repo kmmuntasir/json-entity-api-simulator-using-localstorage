@@ -1,0 +1,47 @@
+[
+    {
+        "post_id": "1",
+        "post_title": "Post-AWS",
+        "post_subtitle": "Post-AWS Subtitle",
+        "post_image": "3ff52bc8fbbc.jpg",
+        "timestamp": "2021-08-22 05:58:08",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "2",
+        "post_title": "Post-DynamoDB",
+        "post_subtitle": "Post-DynamoDB Subtitle",
+        "post_image": "cb9ad6f15423.jpg",
+        "timestamp": "2021-08-22 05:58:28",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "3",
+        "post_title": "Post-C",
+        "post_subtitle": "Post-C Subtitle",
+        "post_image": "8c68e9ab252a.jpg",
+        "timestamp": "2021-08-22 05:58:40",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "4",
+        "post_title": "Post-C++",
+        "post_subtitle": "Post-C++ Subtitle",
+        "post_image": "a2163bb04190.jpg",
+        "timestamp": "2021-08-22 05:58:53",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "5",
+        "post_title": "Post-Codeigniter",
+        "post_subtitle": "Post-Codeigniter Subtitle",
+        "post_image": "92510416a576.jpg",
+        "timestamp": "2021-08-22 05:59:07",
+        "subcategory_id": "1",
+        "category_id": "1"
+    }
+]

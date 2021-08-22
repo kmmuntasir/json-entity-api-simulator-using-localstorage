@@ -1,0 +1,47 @@
+[
+    {
+        "post_id": "18",
+        "post_title": "Post-NuxtJS",
+        "post_subtitle": "Post-NuxtJS Subtitle",
+        "post_image": "be0ed4a5efa9.jpg",
+        "timestamp": "2021-08-22 06:02:28",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "20",
+        "post_title": "Post-PostgreSQL",
+        "post_subtitle": "Post-PostgreSQL Subtitle",
+        "post_image": "e8680f0f32ad.jpg",
+        "timestamp": "2021-08-22 06:02:58",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "21",
+        "post_title": "Post-Redis",
+        "post_subtitle": "Post-Redis Subtitle",
+        "post_image": "47dcef303874.jpg",
+        "timestamp": "2021-08-22 06:03:11",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "23",
+        "post_title": "Post-SpringBoot",
+        "post_subtitle": "Post-SpringBoot Subtitle",
+        "post_image": "f7b1ccde0abd.jpg",
+        "timestamp": "2021-08-22 06:03:48",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "24",
+        "post_title": "Post-Linux",
+        "post_subtitle": "Post-Linux Subtitle",
+        "post_image": "a0649794de21.jpg",
+        "timestamp": "2021-08-22 06:03:58",
+        "subcategory_id": "1",
+        "category_id": "1"
+    }
+]

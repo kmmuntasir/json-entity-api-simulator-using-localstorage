@@ -1,0 +1,47 @@
+[
+    {
+        "post_id": "11",
+        "post_title": "Post-Java",
+        "post_subtitle": "Post-Java Subtitle",
+        "post_image": "c1db2ef11e78.jpg",
+        "timestamp": "2021-08-22 06:00:38",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "12",
+        "post_title": "Post-Javascript",
+        "post_subtitle": "Post-Javascript Subtitle",
+        "post_image": "b70167502f4f.jpg",
+        "timestamp": "2021-08-22 06:00:55",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "13",
+        "post_title": "Post-jQuery",
+        "post_subtitle": "Post-jQuery Subtitle",
+        "post_image": "973ffe9fa98a.jpg",
+        "timestamp": "2021-08-22 06:01:08",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "15",
+        "post_title": "Post-Mocha-Chai",
+        "post_subtitle": "Post-Mocha-Chai Subtitle",
+        "post_image": "4c6735ef7f2b.jpg",
+        "timestamp": "2021-08-22 06:01:39",
+        "subcategory_id": "1",
+        "category_id": "1"
+    },
+    {
+        "post_id": "16",
+        "post_title": "Post-MySQL",
+        "post_subtitle": "Post-MySQL Subtitle",
+        "post_image": "cfafe1242674.jpg",
+        "timestamp": "2021-08-22 06:02:00",
+        "subcategory_id": "1",
+        "category_id": "1"
+    }
+]

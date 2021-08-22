@@ -1,0 +1,37 @@
+[
+    {
+        "subcategory_id": "11",
+        "subcategory_name": "Sub-Java",
+        "subcategory_icon": "2416ff99546f.jpg",
+        "timestamp": "2021-08-22 05:55:39",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "12",
+        "subcategory_name": "Sub-Javascript",
+        "subcategory_icon": "ab4e41668a0e.jpg",
+        "timestamp": "2021-08-22 05:55:46",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "13",
+        "subcategory_name": "Sub-jQuery",
+        "subcategory_icon": "b95721756f5d.jpg",
+        "timestamp": "2021-08-22 05:55:52",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "14",
+        "subcategory_name": "Sub-Kubernetes",
+        "subcategory_icon": "50b5827e0d30.jpg",
+        "timestamp": "2021-08-22 05:55:59",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "15",
+        "subcategory_name": "Sub-Mocha-Chai",
+        "subcategory_icon": "9817a68c36c1.jpg",
+        "timestamp": "2021-08-22 05:56:06",
+        "category_id": "1"
+    }
+]

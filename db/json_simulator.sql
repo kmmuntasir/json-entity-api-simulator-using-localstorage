@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 22, 2021 at 02:06 AM
+-- Generation Time: Aug 22, 2021 at 03:59 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -82,40 +82,41 @@ CREATE TABLE `post` (
   `post_content` text NOT NULL,
   `timestamp` timestamp NULL DEFAULT NULL,
   `is_deleted` bit(1) NOT NULL DEFAULT b'0',
-  `subcategory_id` int(10) UNSIGNED NOT NULL
+  `subcategory_id` int(10) UNSIGNED NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `post`
 --
 
-INSERT INTO `post` (`post_id`, `post_title`, `post_subtitle`, `post_image`, `post_content`, `timestamp`, `is_deleted`, `subcategory_id`) VALUES
-(1, 'Post-AWS', 'Post-AWS Subtitle', '3ff52bc8fbbc.jpg', 'lkjalksflkjaklsdfasdf', '2021-08-21 23:58:08', b'0', 1),
-(2, 'Post-DynamoDB', 'Post-DynamoDB Subtitle', 'cb9ad6f15423.jpg', 'lkjlajsdklfasdf', '2021-08-21 23:58:28', b'0', 1),
-(3, 'Post-C', 'Post-C Subtitle', '8c68e9ab252a.jpg', 'asdfasfasdf', '2021-08-21 23:58:40', b'0', 1),
-(4, 'Post-C++', 'Post-C++ Subtitle', 'a2163bb04190.jpg', 'asdfasdsadf', '2021-08-21 23:58:53', b'0', 1),
-(5, 'Post-Codeigniter', 'Post-Codeigniter Subtitle', '92510416a576.jpg', 'asdfasdfasdf', '2021-08-21 23:59:07', b'0', 1),
-(6, 'Post-Dart', 'Post-Dart Subtitle', '6b7ea389b3e7.jpg', 'asdfasdfasdaassdf', '2021-08-21 23:59:22', b'0', 1),
-(7, 'Post-Docker', 'Post-Docker Subtitle', '67c4cc24d365.jpg', 'asdfaassddf', '2021-08-21 23:59:36', b'0', 1),
-(8, 'Post-Flutter', 'Post-Flutter Subtitle', 'e87020cf2294.jpg', 'asdfassdf', '2021-08-21 23:59:49', b'0', 1),
-(9, 'Post-GitActions', 'Post-GitActions Subtitle', '514702d74b05.jpg', 'lkjasdf', '2021-08-22 00:00:07', b'0', 1),
-(10, 'Post-HTML/CSS', 'Post-HTML/CSS Subtitle', 'f820d753e1c9.jpg', 'asdfasasdfsssdf', '2021-08-22 00:00:25', b'0', 1),
-(11, 'Post-Java', 'Post-Java Subtitle', 'c1db2ef11e78.jpg', 'asdssdf', '2021-08-22 00:00:38', b'0', 1),
-(12, 'Post-Javascript', 'Post-Javascript Subtitle', 'b70167502f4f.jpg', 'asssdf', '2021-08-22 00:00:55', b'0', 1),
-(13, 'Post-jQuery', 'Post-jQuery Subtitle', '973ffe9fa98a.jpg', 'aasdfggasdf', '2021-08-22 00:01:08', b'0', 1),
-(14, 'Post-Kubernetes', 'Post-Kubernetes Subtitle', '1be822b9d264.jpg', 'assdfd', '2021-08-22 00:04:46', b'1', 1),
-(15, 'Post-Mocha-Chai', 'Post-Mocha-Chai Subtitle', '4c6735ef7f2b.jpg', 'assdfdf', '2021-08-22 00:01:39', b'0', 1),
-(16, 'Post-MySQL', 'Post-MySQL Subtitle', 'cfafe1242674.jpg', 'asfsdf', '2021-08-22 00:02:00', b'0', 1),
-(17, 'Post-NodeJS', 'Post-NodeJS Subtitle', 'b41c88411718.jpg', 'assdfdf', '2021-08-22 00:04:44', b'1', 1),
-(18, 'Post-NuxtJS', 'Post-NuxtJS Subtitle', 'be0ed4a5efa9.jpg', 'assdfdf', '2021-08-22 00:02:28', b'0', 1),
-(19, 'Post-PHP', 'Post-PHP Subtitle', 'f91b197e802e.jpg', 'assdf', '2021-08-22 00:05:35', b'1', 1),
-(20, 'Post-PostgreSQL', 'Post-PostgreSQL Subtitle', 'e8680f0f32ad.jpg', 'asfsdfsf', '2021-08-22 00:02:58', b'0', 1),
-(21, 'Post-Redis', 'Post-Redis Subtitle', '47dcef303874.jpg', 'asdfsdf', '2021-08-22 00:03:11', b'0', 1),
-(22, 'Post-Shellscript', 'Post-Shellscript Subtitle', 'f58eb257b3d7.jpg', 'asdfsdf', '2021-08-22 00:04:41', b'1', 1),
-(23, 'Post-SpringBoot', 'Post-SpringBoot Subtitle', 'f7b1ccde0abd.jpg', 'asfsfsdf', '2021-08-22 00:03:48', b'0', 1),
-(24, 'Post-Linux', 'Post-Linux Subtitle', 'a0649794de21.jpg', 'asdsdf', '2021-08-22 00:03:58', b'0', 1),
-(25, 'Post-Git', 'Post-Git Subtitle', 'ccb83bc901cb.jpg', 'asdfsdf', '2021-08-22 00:04:15', b'0', 1),
-(26, 'Post-VueJS', 'Post-VueJS Subtitle', 'd1deba20ee22.jpg', 'assdf', '2021-08-22 00:04:38', b'1', 1);
+INSERT INTO `post` (`post_id`, `post_title`, `post_subtitle`, `post_image`, `post_content`, `timestamp`, `is_deleted`, `subcategory_id`, `category_id`) VALUES
+(1, 'Post-AWS', 'Post-AWS Subtitle', '3ff52bc8fbbc.jpg', 'lkjalksflkjaklsdfasdf', '2021-08-21 23:58:08', b'0', 1, 1),
+(2, 'Post-DynamoDB', 'Post-DynamoDB Subtitle', 'cb9ad6f15423.jpg', 'lkjlajsdklfasdf', '2021-08-21 23:58:28', b'0', 1, 1),
+(3, 'Post-C', 'Post-C Subtitle', '8c68e9ab252a.jpg', 'asdfasfasdf', '2021-08-21 23:58:40', b'0', 1, 1),
+(4, 'Post-C++', 'Post-C++ Subtitle', 'a2163bb04190.jpg', 'asdfasdsadf', '2021-08-21 23:58:53', b'0', 1, 1),
+(5, 'Post-Codeigniter', 'Post-Codeigniter Subtitle', '92510416a576.jpg', 'asdfasdfasdf', '2021-08-21 23:59:07', b'0', 1, 1),
+(6, 'Post-Dart', 'Post-Dart Subtitle', '6b7ea389b3e7.jpg', 'asdfasdfasdaassdf', '2021-08-21 23:59:22', b'0', 1, 1),
+(7, 'Post-Docker', 'Post-Docker Subtitle', '67c4cc24d365.jpg', 'asdfaassddf', '2021-08-21 23:59:36', b'0', 1, 1),
+(8, 'Post-Flutter', 'Post-Flutter Subtitle', 'e87020cf2294.jpg', 'asdfassdf', '2021-08-21 23:59:49', b'0', 1, 1),
+(9, 'Post-GitActions', 'Post-GitActions Subtitle', '514702d74b05.jpg', 'lkjasdf', '2021-08-22 00:00:07', b'0', 1, 1),
+(10, 'Post-HTML/CSS', 'Post-HTML/CSS Subtitle', 'f820d753e1c9.jpg', 'asdfasasdfsssdf', '2021-08-22 00:00:25', b'0', 1, 1),
+(11, 'Post-Java', 'Post-Java Subtitle', 'c1db2ef11e78.jpg', 'asdssdf', '2021-08-22 00:00:38', b'0', 1, 1),
+(12, 'Post-Javascript', 'Post-Javascript Subtitle', 'b70167502f4f.jpg', 'asssdf', '2021-08-22 00:00:55', b'0', 1, 1),
+(13, 'Post-jQuery', 'Post-jQuery Subtitle', '973ffe9fa98a.jpg', 'aasdfggasdf', '2021-08-22 00:01:08', b'0', 1, 1),
+(14, 'Post-Kubernetes', 'Post-Kubernetes Subtitle', '1be822b9d264.jpg', 'assdfd', '2021-08-22 00:04:46', b'1', 1, 1),
+(15, 'Post-Mocha-Chai', 'Post-Mocha-Chai Subtitle', '4c6735ef7f2b.jpg', 'assdfdf', '2021-08-22 00:01:39', b'0', 1, 1),
+(16, 'Post-MySQL', 'Post-MySQL Subtitle', 'cfafe1242674.jpg', 'asfsdf', '2021-08-22 00:02:00', b'0', 1, 1),
+(17, 'Post-NodeJS', 'Post-NodeJS Subtitle', 'b41c88411718.jpg', 'assdfdf', '2021-08-22 00:04:44', b'1', 1, 1),
+(18, 'Post-NuxtJS', 'Post-NuxtJS Subtitle', 'be0ed4a5efa9.jpg', 'assdfdf', '2021-08-22 00:02:28', b'0', 1, 1),
+(19, 'Post-PHP', 'Post-PHP Subtitle', 'f91b197e802e.jpg', 'assdf', '2021-08-22 00:05:35', b'1', 1, 1),
+(20, 'Post-PostgreSQL', 'Post-PostgreSQL Subtitle', 'e8680f0f32ad.jpg', 'asfsdfsf', '2021-08-22 00:02:58', b'0', 1, 1),
+(21, 'Post-Redis', 'Post-Redis Subtitle', '47dcef303874.jpg', 'asdfsdf', '2021-08-22 00:03:11', b'0', 1, 1),
+(22, 'Post-Shellscript', 'Post-Shellscript Subtitle', 'f58eb257b3d7.jpg', 'asdfsdf', '2021-08-22 00:04:41', b'1', 1, 1),
+(23, 'Post-SpringBoot', 'Post-SpringBoot Subtitle', 'f7b1ccde0abd.jpg', 'asfsfsdf', '2021-08-22 00:03:48', b'0', 1, 1),
+(24, 'Post-Linux', 'Post-Linux Subtitle', 'a0649794de21.jpg', 'asdsdf', '2021-08-22 00:03:58', b'0', 1, 1),
+(25, 'Post-Git', 'Post-Git Subtitle', 'ccb83bc901cb.jpg', 'asdfsdf', '2021-08-22 00:04:15', b'0', 1, 1),
+(26, 'Post-VueJS', 'Post-VueJS Subtitle', 'd1deba20ee22.jpg', 'assdf', '2021-08-22 00:04:38', b'1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,8 @@ ALTER TABLE `category`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`post_id`),
-  ADD KEY `FK_post_1` (`subcategory_id`);
+  ADD KEY `FK_post_1` (`subcategory_id`),
+  ADD KEY `FK_post_2` (`category_id`);
 
 --
 -- Indexes for table `subcategory`
@@ -218,7 +220,8 @@ ALTER TABLE `subcategory`
 -- Constraints for table `post`
 --
 ALTER TABLE `post`
-  ADD CONSTRAINT `FK_post_1` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategory` (`subcategory_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_post_1` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategory` (`subcategory_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_post_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `subcategory`

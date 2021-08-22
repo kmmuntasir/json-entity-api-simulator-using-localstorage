@@ -1,0 +1,37 @@
+[
+    {
+        "subcategory_id": "16",
+        "subcategory_name": "Sub-MySQL",
+        "subcategory_icon": "e45752a5f1ed.jpg",
+        "timestamp": "2021-08-22 05:56:15",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "17",
+        "subcategory_name": "Sub-NodeJS",
+        "subcategory_icon": "16e9330bfce8.jpg",
+        "timestamp": "2021-08-22 05:56:21",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "18",
+        "subcategory_name": "Sub-NuxtJS",
+        "subcategory_icon": "93d1969f9042.jpg",
+        "timestamp": "2021-08-22 05:56:29",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "19",
+        "subcategory_name": "Sub-PHP",
+        "subcategory_icon": "eef59cf346f8.jpg",
+        "timestamp": "2021-08-22 05:56:35",
+        "category_id": "1"
+    },
+    {
+        "subcategory_id": "22",
+        "subcategory_name": "Sub-Shellscript",
+        "subcategory_icon": "796fcade523b.jpg",
+        "timestamp": "2021-08-22 05:57:05",
+        "category_id": "1"
+    }
+]

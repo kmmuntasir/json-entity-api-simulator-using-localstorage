@@ -34,24 +34,26 @@ class M_subcategory extends Ci_model
 
 	function delete_single_subcategory($subcategory_id)
 	{
-		$updated_subcategory['timestamp'] = $this->now();
 		$updated_subcategory['is_deleted'] = 1;
-		return $this->update_single_subcategory($subcategory_id, $updated_subcategory);
+		return $this->update_single_subcategory($subcategory_id, $updated_subcategory, $this->now());
 	}
 
-	function update_single_subcategory($subcategory_id, $subcategory)
+	function update_single_subcategory($subcategory_id, $subcategory, $timestamp)
 	{
+		$subcategory['timestamp'] = $timestamp;
+		$category['timestamp'] = $timestamp;
+
 		$this->db->trans_start();
 		$this->db->where('subcategory_id', $subcategory_id)->update('subcategory', $subcategory);
+		$this->db->where('category_id', $subcategory['category_id'])->update('category', $category);
 		$this->db->trans_complete();
 		return $this->db->trans_status();
 	}
 
 	function restore_single_subcategory($subcategory_id)
 	{
-		$updated_subcategory['timestamp'] = $this->now();
 		$updated_subcategory['is_deleted'] = 0;
-		return $this->update_single_subcategory($subcategory_id, $updated_subcategory);
+		return $this->update_single_subcategory($subcategory_id, $updated_subcategory, $this->now());
 	}
 
 	function insert_single_subcategory($subcategory)

@@ -65,8 +65,7 @@ class Subcategory extends Admin_Controller
 			}
 		}
 
-		$_POST['timestamp'] = $this->now();
-		$stat = $this->model->update_single_subcategory($_POST['subcategory_id'], $_POST);
+		$stat = $this->model->update_single_subcategory($_POST['subcategory_id'], $_POST, $this->now);
 		if($stat) {
 			if($upload_result) {
 				unlink($this->image_upload_path . $old_subcategory->$upload_file_field_name);

@@ -390,6 +390,39 @@ class ST_Controller extends CI_Controller
 		return $this->data['controller'] . '/' . $method_referrer;
 	}
 
+	public function writeJsonFile($filePath, $content) {
+		$file = fopen($filePath, "w") or die("Unable to open file!");
+		$json = json_encode($content, JSON_PRETTY_PRINT);
+		fwrite($file, $json);
+		fclose($file);
+	}
+
+	public function readJsonFile($filePath) {
+		$file = fopen($filePath, "r") or die("Unable to open file!");
+		$json = fread($file, filesize($filePath));
+		$content = json_decode($json);
+		fclose($file);
+		return $content;
+	}
+
+	public function deleteDir($dirPath) {
+		if (! is_dir($dirPath)) {
+			throw new InvalidArgumentException("$dirPath must be a directory");
+		}
+		if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+			$dirPath .= '/';
+		}
+		$files = glob($dirPath . '*', GLOB_MARK);
+		foreach ($files as $file) {
+			if (is_dir($file)) {
+				$this->deleteDir($file);
+			} else {
+				unlink($file);
+			}
+		}
+		rmdir($dirPath);
+	}
+
 }
 
 

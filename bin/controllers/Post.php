@@ -65,8 +65,7 @@ class Post extends Admin_Controller
 			}
 		}
 
-		$_POST['timestamp'] = $this->now();
-		$stat = $this->model->update_single_post($_POST['post_id'], $_POST);
+		$stat = $this->model->update_single_post($_POST['post_id'], $_POST, $this->now);
 		if($stat) {
 			if($upload_result) {
 				unlink($this->image_upload_path . $old_post->$upload_file_field_name);

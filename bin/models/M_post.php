@@ -34,24 +34,28 @@ class M_post extends Ci_model
 
 	function delete_single_post($post_id)
 	{
-		$updated_post['timestamp'] = $this->now();
 		$updated_post['is_deleted'] = 1;
-		return $this->update_single_post($post_id, $updated_post);
+		return $this->update_single_post($post_id, $updated_post, $this->now());
 	}
 
-	function update_single_post($post_id, $post)
+	function update_single_post($post_id, $post, $timestamp)
 	{
+		$post['timestamp'] = $timestamp;
+		$subcategory['timestamp'] = $timestamp;
+		$category['timestamp'] = $timestamp;
+
 		$this->db->trans_start();
 		$this->db->where('post_id', $post_id)->update('post', $post);
+		$this->db->where('subcategory_id', $post['subcategory_id'])->update('subcategory', $subcategory);
+		$this->db->where('category_id', $post['category_id'])->update('category', $category);
 		$this->db->trans_complete();
 		return $this->db->trans_status();
 	}
 
 	function restore_single_post($post_id)
 	{
-		$updated_post['timestamp'] = $this->now();
 		$updated_post['is_deleted'] = 0;
-		return $this->update_single_post($post_id, $updated_post);
+		return $this->update_single_post($post_id, $updated_post, $this->now());
 	}
 
 	function insert_single_post($post)
